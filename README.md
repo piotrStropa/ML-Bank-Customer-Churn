@@ -129,12 +129,12 @@ Wyniki dla poszczególnych modeli:
 ```python
 LogisticRegression : 0.811
 GaussianNB : 0.830
-KNN : 0.827
+KNC : 0.827
 SVC : 0.864
 Bagging : 0.859
 DecisionTree : 0.803
 Random_Forest : 0.869
-GBM : 0.870
+GBC : 0.870
 ```
 Jak widać najlepiej wypadł RandomForestClassifier oraz GradientBoostingClassifier
 
@@ -164,8 +164,9 @@ classifier.fit(X_train, y_train, batch_size = 15, epochs = 100)
 
 ```python
 Epoch 250/250
-8000/8000 [==============================] - 0s 53us/sample - loss: 0.3208 - acc: 0.8708```
+8000/8000 [==============================] - 0s 53us/sample - loss: 0.3208 - acc: 0.8708
 ```
+Wynik accuracy wskauje, że zamodelowana w ten sposób sieć neuronowa, daje lepsze wyniki niż domyślne modele.
 
 Macierz błędu wygląda następująco:
 ```python
