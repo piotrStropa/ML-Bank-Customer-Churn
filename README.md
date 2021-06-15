@@ -8,7 +8,7 @@ Opisy poszczególnych kolumn:
 RowNumber : Numer wiersza
 CustomerId : Id klienta
 Surname : Nazwisko klienta
-CreditScore : The credit score of the customer
+CreditScore : Zdolność kredytowa
 Geography : Kraj zamieszjania (Niemcy / Francja / Hiszpania)
 Gender : Płeć
 Age : Wiek
