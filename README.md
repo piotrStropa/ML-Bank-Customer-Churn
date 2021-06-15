@@ -90,7 +90,7 @@ Macierz korelacji wygląda następująco:
 ![Macierz korelacji](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/corr.png?raw=true)
 
 
-##Modele
+## Modele
 Zacznijmy od sprawdzenia domyślnych modeli:
 - LogisticRegression
 - GaussianNB
@@ -127,7 +127,7 @@ GBM : 0.870
 ```
 Jak widać najlepiej wypadł RandomForestClassifier oraz GradientBoostingClassifier
 
-#Sieć neuronowa
+# Sieć neuronowa
 
 ```python
 Epoch 100/100
@@ -138,6 +138,7 @@ Epoch 100/100
 
 
 Macierz błędu wygląda następująco:
+
 ![Macierz błędu](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/confusion.png?raw=true)
 
 
