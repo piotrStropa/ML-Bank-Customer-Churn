@@ -85,8 +85,19 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 ```
 
 Następnie dane zostały znormalizowane przy użyciu StandardScalera.
-
+```python
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+```
 Macierz korelacji wygląda następująco:
+```python
+plt.figure(figsize=(20,20))
+churn_corr = dataset.corr()
+churn_corr_top = churn_corr.index
+sns.heatmap(dataset[churn_corr_top].corr(), annot=True)
+plt.show()
+```
 ![Macierz korelacji](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/corr.png?raw=true)
 
 

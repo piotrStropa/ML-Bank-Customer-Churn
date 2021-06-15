@@ -33,11 +33,11 @@ labelencoder_X_2 = LabelEncoder()
 X['Gender'] = labelencoder_X_2.fit_transform(X['Gender'])
 X = pd.get_dummies(X, columns=['Geography'],  drop_first=True)
 
-# plt.figure(figsize=(20,20))
-# churn_corr = dataset.corr()
-# churn_corr_top = churn_corr.index
-# sns.heatmap(dataset[churn_corr_top].corr(), annot=True)
-# plt.show()
+plt.figure(figsize=(20,20))
+churn_corr = dataset.corr()
+churn_corr_top = churn_corr.index
+sns.heatmap(dataset[churn_corr_top].corr(), annot=True)
+plt.show()
 
 
 
