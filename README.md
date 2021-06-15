@@ -115,8 +115,8 @@ Zacznijmy od sprawdzenia domyślnych modeli:
 models = [LogisticRegression(),GaussianNB(), KNeighborsClassifier(),
           SVC(probability=True),BaggingClassifier(),DecisionTreeClassifier(),
           RandomForestClassifier(), GradientBoostingClassifier()]
-names = ["LogisticRegression","GaussianNB","KNN","SVC","Bagging",
-             "DecisionTree","Random_Forest","GBM",]
+names = ["LogisticRegression","GaussianNB","KNC","SVC","Bagging",
+             "DecisionTree","Random_Forest","GBC"]
 
 print('Dokładność dla domyślnych modeli: ', end = "\n\n")
 for name, model in zip(names, models):
