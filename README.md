@@ -87,7 +87,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 Następnie dane zostały znormalizowane przy użyciu StandardScalera.
 
 Macierz korelacji wygląda następująco:
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Macierz korelacji](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/corr.png?raw=true)
 
 
 ##Modele
