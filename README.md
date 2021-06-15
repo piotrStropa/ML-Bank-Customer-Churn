@@ -135,3 +135,10 @@ Epoch 100/100
 ```
 
 
+
+
+Macierz błędu wygląda następująco:
+![Macierz błędu](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/confusion.png?raw=true)
+
+
+
