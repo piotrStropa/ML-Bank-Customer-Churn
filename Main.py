@@ -33,11 +33,11 @@ labelencoder_X_2 = LabelEncoder()
 X['Gender'] = labelencoder_X_2.fit_transform(X['Gender'])
 X = pd.get_dummies(X, columns=['Geography'],  drop_first=True)
 
-plt.figure(figsize=(20,20))
-churn_corr = dataset.corr()
-churn_corr_top = churn_corr.index
-sns.heatmap(dataset[churn_corr_top].corr(), annot=True)
-plt.show()
+# plt.figure(figsize=(20,20))
+# churn_corr = dataset.corr()
+# churn_corr_top = churn_corr.index
+# sns.heatmap(dataset[churn_corr_top].corr(), annot=True)
+# plt.show()
 
 
 
@@ -62,12 +62,12 @@ for name, model in zip(names, models):
 
 classifier = keras.Sequential()
 
-classifier.add(layers.Dense(units = 9, kernel_initializer = 'uniform', activation = 'relu', input_dim = 11))
-classifier.add(layers.Dense(units = 9, kernel_initializer = 'uniform', activation = 'relu'))
+classifier.add(layers.Dense(units = 11, kernel_initializer = 'uniform', activation = 'relu', input_dim = 11))
+classifier.add(layers.Dense(units = 11, kernel_initializer = 'uniform', activation = 'relu'))
 classifier.add(layers.Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-classifier.fit(X_train, y_train, batch_size = 15, epochs = 100)
+classifier.fit(X_train, y_train, batch_size = 15, epochs = 250)
 
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred >= 0.5)

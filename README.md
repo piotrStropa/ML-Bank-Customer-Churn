@@ -129,15 +129,45 @@ Jak widać najlepiej wypadł RandomForestClassifier oraz GradientBoostingClassif
 
 # Sieć neuronowa
 
+Do zbudowania sieci neuronowej został użyty model sekwencyjny który jest zbudowany przy założeniu, 
+że dane wejściowe następnej warstwy są wyjściami poprzedniej warstwy. 
+
+Każda warstwa jest warstwą Dense (gęstą) tzn.  wszystkie jednostki poprzedniej warstwy są połączone ze wszystkimi w następnej,
+dwie pierwsze warstwy mają funkcję aktywacji 'relu'.
+
+Rozważamy problem klasyfikacji binarnej więc końcowo najlepiej jest przyjąć funkcję aktywacji w kształcie 'S' (sigmoid).
+
+Następnie wykonujemy 250 epok trenowania modelu. 
+
 ```python
-Epoch 100/100
-8000/8000 [==============================] - 1s 66us/sample - loss: 0.3985 - acc: 0.8355
+classifier = keras.Sequential()
+
+classifier.add(layers.Dense(units = 11, kernel_initializer = 'uniform', activation = 'relu', input_dim = 11))
+classifier.add(layers.Dense(units = 11, kernel_initializer = 'uniform', activation = 'relu'))
+classifier.add(layers.Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
+classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+
+classifier.fit(X_train, y_train, batch_size = 15, epochs = 100)
+
 ```
 
-
-
+```python
+Epoch 250/250
+8000/8000 [==============================] - 0s 53us/sample - loss: 0.3208 - acc: 0.8708```
+```
 
 Macierz błędu wygląda następująco:
+```python
+y_pred = classifier.predict(X_test)
+y_pred = (y_pred >= 0.5)
+
+cm = confusion_matrix(y_test, y_pred)
+p = sns.heatmap(pd.DataFrame(cm), annot=True, cmap="YlGnBu" ,fmt='g')
+plt.title('Confusion matrix', y=1.1)
+plt.ylabel('Actual label')
+plt.xlabel('Predicted label')
+plt.show()
+```
 
 ![Macierz błędu](https://github.com/piotrStropa/ML-Bank-Customer-Churn/blob/main/confusion.png?raw=true)
 
